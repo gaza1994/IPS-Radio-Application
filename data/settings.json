@@ -1,0 +1,38 @@
+[
+    {
+        "key": "gjradiostats_autoplay",
+        "default": "false"
+    },
+    {
+        "key": "gjradiostats_debug",
+        "default": "0"
+    },
+    {
+        "key": "gjradiostats_ip",
+        "default": ""
+    },
+    {
+        "key": "gjradiostats_playerstyle",
+        "default": "1"
+    },
+    {
+        "key": "gjradiostats_playerwidth",
+        "default": "100%"
+    },
+    {
+        "key": "gjradiostats_port",
+        "default": ""
+    },
+    {
+        "key": "gjradiostats_title",
+        "default": "Radio"
+    },
+    {
+        "key": "gjradiostats_updatepolling",
+        "default": "60"
+    },
+    {
+        "key": "gjradiostats_visibility",
+        "default": "*"
+    }
+]

@@ -1,0 +1,11 @@
+{
+    "gjradio": {
+        "settings": {
+            "tab": "gjradiostats",
+            "controller": "settings",
+            "do": "",
+            "restriction": "settings_manage",
+            "subcontrollers": ""
+        }
+    }
+}

@@ -1,0 +1,125 @@
+<ips:template parameters="$shoutcast" />
+
+<style>
+    .radio_online {
+        width:20px;
+        height:20px;
+        background:#1AC216;
+        border-radius:50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+
+<div class='ipsGrid ipsGrid_collapsePhone'>
+    <div class='ipsGrid_span2'>
+        <h3 class="ipsType_reset ipsPad_half ipsWidget_title shoutcast_status">
+        {setting='gjradiostats_title'}
+        </h3>
+    </div>
+    <div class='ipsGrid_span6 ipsPad_half ipsType_center ipsType_small ipsAreaBackground'>
+        <span class="ipsType_small pull-left">
+            {{if $shoutcast['streamstatus']==1}}
+                <i class="fa fa-microphone"></i> <span class="shoutcast_servertitle">{{if empty($shoutcast['servertitle'])}}{setting='gjradiostats_unknown'}{{else}}{$shoutcast['servertitle']}{{endif}}</span>
+            {{endif}}
+        </span>
+        {{if $shoutcast['streamstatus']==1}}
+        <i class="fa fa-music"></i> 
+            <span class="shoutcast_songtitle">        
+                {{if empty($shoutcast['songtitle'])}}
+                    {setting='gjradiostats_unknown'}
+                {{else}}
+                    {$shoutcast['songtitle']}
+                {{endif}}
+            </span>
+        {{endif}}
+    </div>
+    <div class='ipsGrid_span2 ipsPad_half ipsType_small ipsType_center'>
+        {{if $shoutcast['streamstatus']==1}}                
+            <i class="fa fa-user" title='Listners'></i> 
+            <span class="shoutcast_currentlisteners">{$shoutcast['currentlisteners']}</span> | <span class="shoutcast_servergenre">{{if empty($shoutcast['servergenre'])}}{setting='gjradiostats_unknown'}{{else}}{$shoutcast['servergenre']}{{endif}}</span> 
+        {{endif}}
+    </div>
+
+    
+    {{if \IPS\Settings::i()->gjradiostats_debug}}
+        <div class='ipsGrid_span2 ipsPad_half ipsType_small ipsType_center'>
+            <span class="shoutcast_random">
+                {$shoutcast['random']}
+            </span>
+        </div>
+    {{endif}}
+</div>
+
+<script type='text/javascript'>
+    const debug = {expression="\IPS\Settings::i()->gjradiostats_debug"};
+    if(debug) {
+        console.log('SHOUTcast is in Debug Mode', debug);
+    }
+    function updateRadioStats() {
+        fetch('/index.php?app=gjradiostats&module=gjradiostats&controller=fetchRadioStats')
+            .then(response => response.json())
+            .then(data => {
+                if(debug){
+                    console.log('SHOUTcast stats fetched from cache', data);
+                }
+                if (data.error) {
+                    document.getElementById('radioStatsContainer').innerHTML = 'No data available';
+                } else {
+                    // Update all instances of class shoutcast_servertitle
+                    document.querySelectorAll('.shoutcast_status').forEach(element => {
+                        element.innerHTML = '<div class="radio_online"></div>' + `{setting='gjradiostats_title'}` || '{setting='gjradiostats_unknown'}';
+                        if(data.streamstatus == 1) {
+                            // Update span with class radio_online to have background color of #1AC216
+                            document.querySelectorAll('.radio_online').forEach(element => {
+                                element.style.backgroundColor = '#1AC216';
+                            });
+                        } else {
+                            document.querySelectorAll('.radio_online').forEach(element => {
+                                element.style.backgroundColor = '#A53535';
+                            });
+                        }
+                    });
+
+                    // Update all instances of class shoutcast_servertitle
+                    document.querySelectorAll('.shoutcast_servertitle').forEach(element => {
+                        element.textContent = data.servertitle || '{setting='gjradiostats_unknown'}';
+                    });
+
+                    // Update all instances of class shoutcast_songtitle
+                    document.querySelectorAll('.shoutcast_songtitle').forEach(element => {
+                        element.textContent = data.songtitle || '{setting='gjradiostats_unknown'}';
+                    });
+
+                    // Update all instances of class shoutcast_currentlisteners
+                    document.querySelectorAll('.shoutcast_currentlisteners').forEach(element => {
+                        element.textContent = data.currentlisteners || 0;
+                    });
+
+                    // Update all instances of class shoutcast_servergenre
+                    document.querySelectorAll('.shoutcast_servergenre').forEach(element => {
+                        element.textContent = data.servergenre || 'Misc';
+                    });
+
+                    if (debug){
+                        // Update all instances of class shoutcast_random
+                        document.querySelectorAll('.shoutcast_random').forEach(element => {
+                            element.textContent = data.random || '{setting='gjradiostats_unknown'}';
+                        });
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching radio stats:', error));
+    }
+
+    const updatePollingInterval = {expression="\IPS\Settings::i()->gjradiostats_updatepolling"};
+    console.log('SHOUTcast stats next fetch in %s seconds', updatePollingInterval);
+    
+    // Auto-update
+    setInterval(updateRadioStats, updatePollingInterval * 1000);
+    
+    // Initial call
+    updateRadioStats();
+</script>

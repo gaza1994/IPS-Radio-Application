@@ -1,0 +1,37 @@
+<ips:template parameters="$shoutcast" />
+
+<audio id="gjRadioStatsPlayer" controls style="display:none;position: fixed; bottom: 0px; left: 0px; width: {setting='gjradiostats_playerwidth'}; padding: 0 10px 10px 10px;z-index:100;">
+  <source src="https://{setting='gjradiostats_ip'}:{setting='gjradiostats_port'}/stream?type=http&nocache=8" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<script type='text/javascript'>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const autoplay = {expression="\IPS\Settings::i()->gjradiostats_autoplay"};
+    const player = document.getElementById('gjRadioStatsPlayer');
+    const debug = {expression="\IPS\Settings::i()->gjradiostats_debug"};
+    const playerStyle = {expression="\IPS\Settings::i()->gjradiostats_playerstyle"};
+
+    if(playerStyle === 2){ // Inline
+            player.style.position = 'unset';
+            player.style.width = '{expression="\IPS\Settings::i()->gjradiostats_playerwidth"}';
+    }
+
+    player.style.display = 'block';
+
+    // Autoplay shinanigans
+    setTimeout(() => {
+        if(autoplay === 1){
+            player.play().catch(error => {
+                if(debug){
+                    console.warn("Autoplay prevented:", error);
+                }
+                // Add a fallback so the user can start it manually
+                document.body.addEventListener('click', () => {
+                    player.play();
+                }, { once: true });
+            });
+        }
+    }, 1000);
+});
+</script>

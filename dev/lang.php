@@ -1,0 +1,36 @@
+<?php
+
+$lang = array(
+	'__app_gjradiostats'	=> "(GJ) Radio Stats",
+    '__app_gjradiostats_icon'	=> "fa-solid fa-headphones",
+    'menutab__gjradiostats'	=> "(GJ) Radio Stats",
+    'menutab__gjradiostats_icon' => 'fa-solid fa-headphones',
+    'menu__gjradiostats_gjradio_settings' => 'Settings',
+    'menu__gjradiostats_gjradio' 	=> "(GJ) Radio Stats",
+    'module__gjradiostats_gjradiostats' => "(GJ) Radio Stats",
+    'block_gjRadioStatsBanner' => 'Radio Stats Banner',
+    'block_gjRadioStatsBanner_desc' => 'Display a banner with radio stats',
+    'block_gjRadioStatsBlock' => 'Radio Player',
+    'block_gjRadioStatsBlock_desc' => 'Display a pinned to bottom audio player',
+    'gjradiostats_tab_general' => 'General',
+    'gjradiostats_ip' => 'IP',
+    'gjradiostats_ip_desc' => 'The IP address of the server running SHOUTcast (NOTE: in order for the audio player to function, this host MUST have a valid SSL certificate)',
+    'gjradiostats_port' => 'Port',
+    'gjradiostats_port_desc' => 'The port of the server running SHOUTcast',
+    'gjradiostats_visibility' => 'Visibility',
+    'gjradiostats_visibility_desc' => 'Select which groups can see the stats and radio player',
+    'gjradiostats_updatepolling' => 'Update Polling',
+    'gjradiostats_updatepolling_desc' => 'How often the end user will fetch updated stats from cache (in seconds)',
+    'gjradiostats_debug' => 'Debug Mode',
+    'gjradiostats_debug_desc' => 'Enable debug mode to log additional information - disable this when you have confirmed the plugin is working correctly',
+    'gjradiostats_autoplay' => 'Autoplay',
+    'gjradiostats_autoplay_desc' => 'Enable autoplay for the radio player',
+    'gjradiostats_playerstyle' => 'Player Style',
+    'gjradiostats_playerstyle_desc' => 'Select the style of the radio player',
+    'gjradiostats_title' => 'Title',
+    'gjradiostats_title_desc' => 'The title of the radio',
+    'gjradiostats_playerwidth' => 'Player Width',
+    'gjradiostats_playerwidth_desc' => 'The width of the radio player, either px value or % (eg. 100% OR 300px)',
+
+    'gjradiostats_unknown' => 'Unknown'
+);
