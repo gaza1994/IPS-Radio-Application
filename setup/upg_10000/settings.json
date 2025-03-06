@@ -1,0 +1,13 @@
+{
+    "added": [
+        "gjradiostats_autoplay",
+        "gjradiostats_debug",
+        "gjradiostats_ip",
+        "gjradiostats_playerstyle",
+        "gjradiostats_port",
+        "gjradiostats_updatepolling",
+        "gjradiostats_visibility"
+    ],
+    "edited": [],
+    "removed": []
+}

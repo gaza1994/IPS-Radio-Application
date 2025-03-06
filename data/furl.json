@@ -1,0 +1,9 @@
+{
+    "topLevel": "",
+    "pages": {
+        "gjradiostats": {
+            "friendly": "gjradiostatsfetch",
+            "real": "app=gjradiostats&module=gjradiostats&controller=fetchRadioStats"
+        }
+    }
+}

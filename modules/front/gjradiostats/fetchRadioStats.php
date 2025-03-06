@@ -3,28 +3,29 @@
 
 namespace IPS\gjradiostats\modules\front\gjradiostats;
 
+use IPS\Dispatcher\Controller;
 use IPS\Data\Store;
 use IPS\Output;
 use function defined;
 
 /* To prevent PHP errors (extending class does not exist) revealing path */
-if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
 {
-	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
 	exit;
 }
 
 /**
  * fetchRadioStats
  */
-class _fetchRadioStats extends \IPS\Dispatcher\Controller
+class fetchRadioStats extends Controller
 {
 	/**
 	 * Execute
 	 *
 	 * @return	void
 	 */
-	public function execute()
+	public function execute() : void
 	{
 		
 		parent::execute();
@@ -45,7 +46,7 @@ class _fetchRadioStats extends \IPS\Dispatcher\Controller
 	 *
 	 * @return	void
 	 */
-	protected function manage()
+	protected function manage() : void
 	{
 		// This is the default method if no 'do' parameter is specified
 	}

@@ -8,7 +8,11 @@
         "default_area": "",
         "allow_reuse": false,
         "menu_style": "menu",
-        "embeddable": false
+        "layouts": "grid,minimal,featured,mini-grid,table,wallpaper",
+        "embeddable": false,
+        "padding": true,
+        "default_layout": "minimal",
+        "searchterms": "radio,shoutcast"
     },
     "gjRadioStatsBlock": {
         "class": "\\IPS\\Widget",
@@ -19,6 +23,10 @@
         "default_area": "",
         "allow_reuse": false,
         "menu_style": "menu",
-        "embeddable": false
+        "layouts": "grid,minimal,featured,mini-grid,table,wallpaper",
+        "embeddable": false,
+        "padding": true,
+        "default_layout": "minimal",
+        "searchterms": "radio,shoutcast"
     }
 }

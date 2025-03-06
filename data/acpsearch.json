@@ -1,1 +1,10 @@
-{}
+{
+    "app=gjradiostats&module=gjradio&controller=settings": {
+        "lang_key": "settings",
+        "restriction": null,
+        "keywords": [
+            "settings",
+            "radio"
+        ]
+    }
+}

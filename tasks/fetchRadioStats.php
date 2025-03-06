@@ -6,11 +6,13 @@
  * @license		https://www.invisioncommunity.com/legal/standards/
  * @package		Invision Community
  * @subpackage	gjradiostats
- * @since		05 Mar 2025
+ * @since		22 Feb 2025
  */
 
 namespace IPS\gjradiostats\tasks;
 
+use IPS\Task;
+use IPS\Task\Exception as TaskException;
 use IPS\Settings;
 use IPS\Log;
 use IPS\Data\Store;
@@ -18,16 +20,16 @@ use IPS\Http\Url;
 use function defined;
 
 /* To prevent PHP errors (extending class does not exist) revealing path */
-if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
 {
-	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
 	exit;
 }
 
 /**
  * fetchRadioStats Task
  */
-class _fetchRadioStats extends \IPS\Task
+class fetchRadioStats extends Task
 {
 	/**
 	 * Execute
@@ -38,9 +40,9 @@ class _fetchRadioStats extends \IPS\Task
 	 * Tasks should execute within the time of a normal HTTP request.
 	 *
 	 * @return	mixed	Message to log or NULL
-	 * @throws	\IPS\Task\Exception
+	 * @throws	TaskException
 	 */
-	public function execute()
+	public function execute() : mixed
 	{
 		// Get SHOUTcast settings
 		$ip = Settings::i()->gjradiostats_ip;
@@ -101,7 +103,7 @@ class _fetchRadioStats extends \IPS\Task
 	 *
 	 * @return	void
 	 */
-	public function cleanup()
+	public function cleanup() : void
 	{
 		
 	}

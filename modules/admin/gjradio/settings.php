@@ -17,34 +17,33 @@ use IPS\Member\Group;
 use function defined;
 
 /* To prevent PHP errors (extending class does not exist) revealing path */
-if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
 {
-	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
 	exit;
 }
 
 /**
  * settings
  */
-class _settings extends \IPS\Dispatcher\Controller
+class settings extends Controller
 {
 	/**
 	 * Execute
 	 *
 	 * @return	void
 	 */
-	public function execute()
+	public function execute() : void
 	{
-		\IPS\Dispatcher::i()->checkAcpPermission( 'settings_manage' );
-		parent::execute();
-	}
+		Dispatcher::i()->checkAcpPermission( 'settings_manage' );
+		parent::execute();	}
 
 	/**
 	 * ...
 	 *
-	 * @return	void
+	 * @return	Form|string
 	 */
-	protected function manage()
+	protected function manage(): void
 	{
 		$form = new Form;
 		$groups = Group::groups();
@@ -95,6 +94,7 @@ class _settings extends \IPS\Dispatcher\Controller
 		Output::i()->breadcrumb[] = array(Url::internal("app=gjradiostats&module=gjradio&controller=settings"), '__app_gjradiostats');
 		Output::i()->title = Member::loggedIn()->language()->addToStack('__app_gjradiostats');
 		Output::i()->output .= $form;
+
 	}
 	
 	// Create new methods with the same name as the 'do' parameter which should execute it

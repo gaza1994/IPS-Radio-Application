@@ -3,14 +3,14 @@
         "gjradio": {
             "default_controller": "settings",
             "protected": 0,
-            "default": 0
+            "default": 1
         }
     },
     "front": {
         "gjradiostats": {
             "default_controller": "fetchRadioStats",
             "protected": 0,
-            "default": 0
+            "default": 1
         }
     }
 }

@@ -5,7 +5,8 @@
             "controller": "settings",
             "do": "",
             "restriction": "settings_manage",
-            "subcontrollers": ""
+            "subcontrollers": "settings",
+            "module_url": "gjradio"
         }
     }
 }

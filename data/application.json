@@ -1,1 +1,9 @@
-{"application_title":"(GJ) Radio Stats","app_author":"Gareth Johnstone","app_directory":"gjradiostats","app_protected":false,"app_website":{"data":{"scheme":"https","host":"garethjohnstone.co.uk","port":null,"user":null,"pass":null,"path":"\/","query":"","fragment":null},"queryString":[],"hiddenQueryString":[]},"app_update_check":{"data":{"scheme":"https","host":"raw.githubusercontent.com","port":null,"user":null,"pass":null,"path":"\/gaza1994\/IPS4-SHOUTcast-Plugin\/refs\/heads\/main\/update-check.json","query":"","fragment":null},"queryString":[],"hiddenQueryString":[]},"app_hide_tab":true}
+{
+    "application_title": "(GJ) Radio Stats",
+    "app_author": "Gareth Johnstone",
+    "app_directory": "gjradiostats",
+    "app_protected": 0,
+    "app_website": "https:\/\/garethjohnstone.co.uk\/",
+    "app_update_check": "https:\/\/raw.githubusercontent.com\/gaza1994\/IPS4-SHOUTcast-Plugin\/refs\/heads\/main\/update-check.json",
+    "app_hide_tab": 0
+}

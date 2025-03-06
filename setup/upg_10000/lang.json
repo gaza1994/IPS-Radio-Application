@@ -1,0 +1,39 @@
+{
+    "normal": {
+        "added": [
+            "__app_gjradiostats",
+            "block_gjRadioStatsBanner",
+            "block_gjRadioStatsBanner_desc",
+            "block_gjRadioStatsBlock",
+            "block_gjRadioStatsBlock_desc",
+            "gjradiostats_tab_general",
+            "gjradiostats_ip",
+            "gjradiostats_ip_desc",
+            "gjradiostats_port",
+            "gjradiostats_port_desc",
+            "gjradiostats_visibility",
+            "gjradiostats_visibility_desc",
+            "gjradiostats_updatepolling",
+            "gjradiostats_updatepolling_desc",
+            "gjradiostats_debug",
+            "gjradiostats_debug_desc",
+            "gjradiostats_autoplay",
+            "gjradiostats_autoplay_desc",
+            "gjradiostats_playerstyle",
+            "gjradiostats_playerstyle_desc",
+            "gjradiostats_unknown",
+            "menutab__gjradiostats",
+            "menutab__gjradiostats_icon",
+            "menu__gjradiostats_gjradio_settings",
+            "menu__gjradiostats_gjradio",
+            "module__gjradiostats_gjradiostats"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

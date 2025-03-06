@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+ <module key="admin/gjradio"><![CDATA[{"default_controller":"settings","protected":0,"default":1}]]></module>
+ <module key="front/gjradiostats"><![CDATA[{"default_controller":"fetchRadioStats","protected":0,"default":1}]]></module>
+ <task frequency="P0Y0M0DT0H1M0S">fetchRadioStats</task>
+ <setting key="gjradiostats_autoplay"><![CDATA[{"key":"gjradiostats_autoplay","default":"false"}]]></setting>
+ <setting key="gjradiostats_debug"><![CDATA[{"key":"gjradiostats_debug","default":"0"}]]></setting>
+ <setting key="gjradiostats_ip"><![CDATA[{"key":"gjradiostats_ip","default":""}]]></setting>
+ <setting key="gjradiostats_playerstyle"><![CDATA[{"key":"gjradiostats_playerstyle","default":"1"}]]></setting>
+ <setting key="gjradiostats_port"><![CDATA[{"key":"gjradiostats_port","default":""}]]></setting>
+ <setting key="gjradiostats_updatepolling"><![CDATA[{"key":"gjradiostats_updatepolling","default":"60"}]]></setting>
+ <setting key="gjradiostats_visibility"><![CDATA[{"key":"gjradiostats_visibility","default":"*"}]]></setting>
+ <widget key="gjRadioStatsBanner"><![CDATA[{"class":"\\IPS\\Widget","restrict":["sidebar","cms"],"default_area":"","allow_reuse":false,"menu_style":"menu","layouts":"grid,minimal,featured,mini-grid,table,wallpaper","embeddable":false,"padding":true,"default_layout":"minimal","searchterms":"radio,shoutcast"}]]></widget>
+ <widget key="gjRadioStatsBlock"><![CDATA[{"class":"\\IPS\\Widget","restrict":["sidebar","cms"],"default_area":"","allow_reuse":false,"menu_style":"menu","layouts":"grid,minimal,featured,mini-grid,table,wallpaper","embeddable":false,"padding":true,"default_layout":"minimal","searchterms":"radio,shoutcast"}]]></widget>
+ <acpsearch key="app=gjradiostats&amp;module=gjradio&amp;controller=settings"><![CDATA[{"lang_key":"settings","restriction":null,"keywords":["settings","radio"]}]]></acpsearch>
+</build>

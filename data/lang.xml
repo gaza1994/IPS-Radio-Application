@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="gjradiostats" version="10002">
+  <word key="__app_gjradiostats" js="0">(GJ) Radio Stats</word>
+  <word key="menutab__gjradiostats" js="0">(GJ) Radio Stats</word>
+  <word key="menutab__gjradiostats_icon" js="0">fa-solid fa-headphones</word>
+  <word key="menu__gjradiostats_gjradio_settings" js="0">Settings</word>
+  <word key="menu__gjradiostats_gjradio" js="0">(GJ) Radio Stats</word>
+  <word key="module__gjradiostats_gjradiostats" js="0">(GJ) Radio Stats</word>
+  <word key="block_gjRadioStatsBanner" js="0">Radio Stats Banner</word>
+  <word key="block_gjRadioStatsBanner_desc" js="0">Display a banner with radio stats</word>
+  <word key="block_gjRadioStatsBlock" js="0">Radio Player</word>
+  <word key="block_gjRadioStatsBlock_desc" js="0">Display a pinned to bottom audio player</word>
+  <word key="gjradiostats_tab_general" js="0">General</word>
+  <word key="gjradiostats_ip" js="0">IP</word>
+  <word key="gjradiostats_ip_desc" js="0">The IP address of the server running SHOUTcast (NOTE: in order for the audio player to function, this host MUST have a valid SSL certificate)</word>
+  <word key="gjradiostats_port" js="0">Port</word>
+  <word key="gjradiostats_port_desc" js="0">The port of the server running SHOUTcast</word>
+  <word key="gjradiostats_visibility" js="0">Visibility</word>
+  <word key="gjradiostats_visibility_desc" js="0">Select which groups can see the stats and radio player</word>
+  <word key="gjradiostats_updatepolling" js="0">Update Polling</word>
+  <word key="gjradiostats_updatepolling_desc" js="0">How often the end user will fetch updated stats from cache (in seconds)</word>
+  <word key="gjradiostats_debug" js="0">Debug Mode</word>
+  <word key="gjradiostats_debug_desc" js="0">Enable debug mode to log additional information - disable this when you have confirmed the plugin is working correctly</word>
+  <word key="gjradiostats_autoplay" js="0">Autoplay</word>
+  <word key="gjradiostats_autoplay_desc" js="0">Enable autoplay for the radio player</word>
+  <word key="gjradiostats_playerstyle" js="0">Player Style</word>
+  <word key="gjradiostats_playerstyle_desc" js="0">Select the style of the radio player</word>
+  <word key="gjradiostats_unknown" js="0">Unknown</word>
+ </app>
+</language>
