@@ -1,8 +1,11 @@
 # (GJ) Radio Stats
 
+## Download
+<a href="https://github.com/gaza1994/IPS-Radio-Application/releases">Go to Releases</a>
+
 ## What is this
 
-This is an Invision Community 4 application to display SHOUTcast stats on your forum, it also includes an audio player
+This is an Invision Community 5 application to display SHOUTcast stats on your forum, it also includes an audio player
 
 ## How to install it
 
@@ -22,9 +25,6 @@ Note: In order for the audio player to function, your stream source MUST have a 
 
 - I need help
   - Open an issue on GitHub, I will try my best to respond.
-
-- Does this support IPS 5
-  - This version does not, however, a v5 is in the works (you can preview it on another branch)
 
 - Can I have this in my own langauge?
   - Maybe? if you know how to do it, I'll accept a PR.
